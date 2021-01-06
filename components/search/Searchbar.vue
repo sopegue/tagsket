@@ -1,48 +1,35 @@
 <template>
-  <div
-    class="border relative flex align-center rounded"
-    :class="{ 'my-shadow border-transparent': focused }"
-    @mouseover="
-      {
-        focused = true
-      }
-    "
-    @mouseleave="manageleave"
-  >
+  <div class="border relative flex align-center rounded-full">
     <input
-      class="w-full outline-none py-15 pl-3 font-normal font font-semibold"
+      class="w-full pr-12 bghover-transparent rounded-full outline-none py-2 pl-3 size-18 font font-semibold col-ws"
       type="search"
-      placeholder="Vue Composition API"
-      @focus="managefocus"
-      @blur="manageblur"
+      placeholder="#foryoupage, #reels, #billionaire"
     />
     <client-only>
-      <button class="hover-008489 no-outline btn-search p-2">
-        <i class="fas fa-search color-363636 makeme-008489"></i>
+      <button
+        class="hover-bg00dce4 btn-cer mr-2 no-outline text-center rounded-full p-2 absolute right-0"
+      >
+        <i class="fas fa-search col-ws"></i>
       </button>
     </client-only>
   </div>
 </template>
 <script>
 export default {
+  props: {
+    scroll: {
+      type: Number,
+      default: 0,
+    },
+  },
   data() {
-    return {
-      focused: false,
-      inputfoc: false,
-    }
+    return {}
   },
-  methods: {
-    manageleave() {
-      if (this.inputfoc !== true) this.focused = false
-    },
-    managefocus() {
-      this.focused = true
-      this.inputfoc = true
-    },
-    manageblur() {
-      this.focused = false
-      this.inputfoc = false
+  computed: {
+    scrolling() {
+      return this.scroll
     },
   },
+  methods: {},
 }
 </script>

@@ -52,7 +52,6 @@ export default {
     },
     handleScroll() {
       this.scroll = window.scrollY
-      console.log(this.scroll)
     },
     showMenu() {
       this.$emit('showMenu', true)

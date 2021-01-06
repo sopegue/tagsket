@@ -7,15 +7,19 @@
   >
     <div class="h-14 w-full px-8 flex align-center justify-between htht">
       <div class="w-full relative flex align-center justify-between">
-        <div class="flex align-center relative">
+        <div
+          class="flex align-center relative"
+          :class="{ hidden: searching && sm640 && scroll > 262 }"
+        >
           <a href="/" class="h-8">
             <div class="h-8 relative flex align-center space-x-2">
               <Logowhite v-if="scrolling <= 479" />
               <Logo v-else />
               <h4
-                class="color-white select-none size-19 font-semibold border-b-8 border-008489"
+                class="color-white select-none size-19 font-semibold border-008489"
                 :class="{
-                  'color-4c4c4c bb00849': scrolling > 479,
+                  'border-b-8': scrolling <= 479,
+                  'color-4c4c4c bb00849 border-b-4': scrolling > 479,
                 }"
               >
                 Tagsket
@@ -23,68 +27,120 @@
             </div>
           </a>
         </div>
-        <div class="flex align-center space-x-6 cc-header">
+        <div
+          v-if="scrolling > 262 && searching"
+          class="w-1/2 flex align-center space-x-3"
+          :class="{ 'w-full': searching && sm640 }"
+        >
+          <client-only>
+            <button
+              class="hover-008489 no-outline btn-search p-2"
+              @click="
+                {
+                  opensearch = false
+                }
+              "
+            >
+              <span
+                class="color-363636"
+                :class="{ 'col-ws': scrolling > 262 && scrolling < 484 }"
+              >
+                <i class="fas fa-arrow-left"></i
+              ></span>
+            </button>
+          </client-only>
+          <Searchbarwhite :scroll="scroll" class="w-full" />
+        </div>
+        <div
+          v-if="(scrolling <= 262 && searching) || !searching"
+          class="flex align-center space-x-6 cc-header"
+          :class="{
+            hidden: smallxx,
+          }"
+        >
           <nuxt-link
             to="#"
-            class="color-white select-none size-14 font-semibold border-b-4 border-008489"
+            class="color-white select-none size-14 font-semibold border-008489"
             :class="{
-              'color-4c4c4c headarticle': scrolling > 479,
-              headtem: scrolling <= 479,
+              'color-4c4c4c headarticle border-b-2': scrolling > 479,
+              'headtem border-b-4': scrolling <= 479,
             }"
             >Tik Tok</nuxt-link
           >
           <nuxt-link
             to="#"
-            class="color-white select-none size-14 font-semibold border-b-4 border-008489"
+            class="color-white select-none size-14 font-semibold border-008489"
             :class="{
-              'color-4c4c4c headarticle': scrolling > 479,
-              headtem: scrolling <= 479,
+              'color-4c4c4c headarticle border-b-2': scrolling > 479,
+              'headtem border-b-4': scrolling <= 479,
               hidden: smallx,
             }"
             >Facebook</nuxt-link
           >
           <nuxt-link
             to="#"
-            class="color-white select-none size-14 font-semibold border-b-4 border-008489"
+            class="color-white select-none size-14 font-semibold border-008489"
             :class="{
-              'color-4c4c4c headarticle': scrolling > 479,
-              headtem: scrolling <= 479,
+              'color-4c4c4c headarticle border-b-2': scrolling > 479,
+              'headtem border-b-4': scrolling <= 479,
               hidden: small,
             }"
             >Instagram</nuxt-link
           >
           <nuxt-link
             to="#"
-            class="color-white select-none size-14 font-semibold border-b-4 border-008489"
+            class="color-white select-none size-14 font-semibold border-008489"
             :class="{
-              'color-4c4c4c headarticle': scrolling > 479,
-              headtem: scrolling <= 479,
+              'color-4c4c4c headarticle border-b-2': scrolling > 479,
+              'headtem border-b-4': scrolling <= 479,
               hidden: sm,
             }"
             >Youtube</nuxt-link
           >
           <nuxt-link
             to="#"
-            class="color-white select-none size-14 font-semibold border-b-4 border-008489"
+            class="color-white select-none size-14 font-semibold border-008489"
             :class="{
-              'color-4c4c4c headarticle': scrolling > 479,
-              headtem: scrolling <= 479,
+              'color-4c4c4c headarticle border-b-2': scrolling > 479,
+              'headtem border-b-4': scrolling <= 479,
               hidden: lg,
             }"
             >Twitter</nuxt-link
           >
           <nuxt-link
             to="#"
-            class="color-white select-none size-14 font-semibold border-b-4 border-008489"
+            class="color-white select-none size-14 font-semibold border-008489"
             :class="{
-              'color-4c4c4c headarticle': scrolling > 479,
-              headtem: scrolling <= 479,
+              'color-4c4c4c headarticle border-b-2': scrolling > 479,
+              'headtem border-b-4': scrolling <= 479,
               hidden: lg,
             }"
             >Snapchat</nuxt-link
           >
         </div>
-        <div class="flex align-center">
+        <div
+          class="flex align-center space-x-5"
+          :class="{ hidden: searching && sm640 && scroll > 262 }"
+        >
+          <div v-show="scrolling > 262 && !searching">
+            <client-only>
+              <button
+                class="no-outline p-2"
+                @click="
+                  {
+                    opensearch = true
+                  }
+                "
+              >
+                <span
+                  class="color-363636"
+                  :class="{ 'col-ws': scrolling > 262 && scrolling < 484 }"
+                >
+                  <i class="fas fa-search size-18"></i
+                ></span>
+              </button>
+            </client-only>
+          </div>
           <nuxt-link
             to="#"
             class="button rounded-full no-outline size-14 font-semibold border-0 px-6 py-2"
@@ -117,23 +173,37 @@ export default {
       default: 99999,
     },
   },
+  data() {
+    return { opensearch: false }
+  },
   computed: {
+    searching() {
+      return this.opensearch === true
+    },
     scrolling() {
       return this.scroll
     },
     lg() {
-      if (this.width < 800) return true
+      if (this.width < 810) return true
+      return false
+    },
+    sm640() {
+      if (this.width < 640) return true
       return false
     },
     sm() {
-      if (this.width < 580) return true
+      if (this.width < 670) return true
       return false
     },
     small() {
-      if (this.width < 500) return true
+      if (this.width < 548) return true
       return false
     },
     smallx() {
+      if (this.width < 460) return true
+      return false
+    },
+    smallxx() {
       if (this.width < 420) return true
       return false
     },

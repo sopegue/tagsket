@@ -4,6 +4,21 @@
       <source src="1.mp4" type="video/mp4" />
       Your browser does not support HTML5 video.
     </video>
+    <div style="height: 80px"></div>
+    <div class="absolute w-full mt-10">
+      <div class="w-full px-6 mb-10">
+        <h3 class="w-full size-28 message color-white">
+          Need to know what people are
+          <span class="font-semibold col-00dce4">tagging</span> about ? <br />
+          <span
+            >Search your <span class="font-semibold col-00dce4">#tag</span> to
+            find out.</span
+          >
+        </h3>
+      </div>
+
+      <div class="search m-0-auto"><Searchbar /></div>
+    </div>
   </div>
 </template>
 <script>
@@ -46,15 +61,29 @@ export default {
 }
 </script>
 <style scoped>
+.search {
+  width: 50%;
+}
 #myVideos {
   object-position: center;
   object-fit: cover;
 }
-.htht {
-  z-index: 9999 !important;
-}
+
 .aft-head {
   z-index: 0 !important;
   height: 512px !important;
+}
+@media screen and (max-width: 800px) {
+  .search {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .search {
+    width: 80%;
+  }
+  .message {
+    font-size: 20px !important;
+  }
 }
 </style>
