@@ -1,7 +1,7 @@
 <template>
   <div class="w-full aft-head relative overflow-hidden text-center">
-    <video id="myVideos" autoplay muted loop class="absolute z-1">
-      <source src="tag3.mp4" type="video/mp4" />
+    <video id="myVideos" autoplay muted loop class="w-full absolute z-1">
+      <source src="1.mp4" type="video/mp4" />
       Your browser does not support HTML5 video.
     </video>
   </div>
