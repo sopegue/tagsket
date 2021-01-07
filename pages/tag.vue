@@ -3,13 +3,11 @@
     <Header
       :scroll="scroll"
       :width="width"
-      class="z-50 pb-16"
+      class="z-50 bg-ww pb-16"
       :class="{
-        shadown: scrolling > 535,
-        'bg-ww': scrolling > 535,
+        shadown: scrolling > 3,
       }"
     />
-    <Afterheader />
     <div class="pt-16">fezfzefezf</div>
     <Footer />
   </div>

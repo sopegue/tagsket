@@ -1,28 +1,212 @@
 <template>
-  <div class="h-16 w-full relative px-8 z-10 tatapp">
-    <div class="vertical-center w-fit flex align-center relative pos-right">
-      <div class="mr-5"><Langchoice /></div>
-      <client-only>
-        <btn-link
-          :needfocus="false"
-          href="https://github.com/nuxt/nuxt.js"
-          class="button rounded is-lights no-outline border-0 font-medium size-14 flex align-center py-2"
-          ><i class="fas fa-sign-in-alt size-16 color-363636"></i
-          ><span class="ml-2 size-14 color-363636">{{
-            $t('sign')
-          }}</span></btn-link
-        ></client-only
-      >
+  <div
+    class="h-14 fixed w-full overflow-hidden text-center"
+    :class="{
+      'pb-5': scrolling > 455,
+    }"
+  >
+    <div class="h-14 w-full px-8 flex align-center justify-between htht">
+      <div class="w-full relative flex align-center justify-between">
+        <div
+          class="flex align-center relative"
+          :class="{ hidden: searching && sm640 }"
+        >
+          <a href="/" class="h-8">
+            <div class="h-8 relative flex align-center space-x-2">
+              <Logo />
+              <h4
+                class="color-white select-none size-19 font-semibold border-008489 color-4c4c4c bb00849 border-b-4"
+              >
+                Tagsket
+              </h4>
+            </div>
+          </a>
+        </div>
+        <div
+          v-if="searching"
+          class="w-1/2 flex align-center space-x-3"
+          :class="{ 'w-full': searching && sm640 }"
+        >
+          <client-only>
+            <button
+              class="hover-008489 no-outline btn-search p-2"
+              @click="
+                {
+                  opensearch = false
+                }
+              "
+            >
+              <span class="color-363636">
+                <i class="fas fa-arrow-left"></i
+              ></span>
+            </button>
+          </client-only>
+          <Searchbarwhite :scroll="500" class="w-full" />
+        </div>
+        <div
+          v-else
+          class="flex align-center space-x-6 cc-header"
+          :class="{
+            hidden: smallxx,
+          }"
+        >
+          <nuxt-link
+            to="#"
+            class="color-white select-none size-14 color-4c4c4c headarticle border-b-2 font-semibold border-008489"
+            >Tik Tok</nuxt-link
+          >
+          <nuxt-link
+            to="#"
+            class="color-white color-4c4c4c headarticle border-b-2 select-none size-14 font-semibold border-008489"
+            :class="{
+              hidden: smallx,
+            }"
+            >Facebook</nuxt-link
+          >
+          <nuxt-link
+            to="#"
+            class="color-white color-4c4c4c headarticle border-b-2 select-none size-14 font-semibold border-008489"
+            :class="{
+              hidden: small,
+            }"
+            >Instagram</nuxt-link
+          >
+          <nuxt-link
+            to="#"
+            class="color-white color-4c4c4c headarticle border-b-2 select-none size-14 font-semibold border-008489"
+            :class="{
+              hidden: sm,
+            }"
+            >Youtube</nuxt-link
+          >
+          <nuxt-link
+            to="#"
+            class="color-white color-4c4c4c headarticle border-b-2 select-none size-14 font-semibold border-008489"
+            :class="{
+              hidden: lg,
+            }"
+            >Twitter</nuxt-link
+          >
+          <nuxt-link
+            to="#"
+            class="color-white color-4c4c4c headarticle border-b-2 select-none size-14 font-semibold border-008489"
+            :class="{
+              hidden: lg,
+            }"
+            >Snapchat</nuxt-link
+          >
+        </div>
+        <div
+          class="flex align-center space-x-5"
+          :class="{ hidden: searching && sm640 }"
+        >
+          <div v-show="!searching">
+            <client-only>
+              <button
+                class="no-outline p-2"
+                @click="
+                  {
+                    opensearch = true
+                  }
+                "
+              >
+                <span class="color-363636">
+                  <i class="fas fa-search size-18"></i
+                ></span>
+              </button>
+            </client-only>
+          </div>
+          <nuxt-link
+            to="#"
+            class="button is-lightees rounded-full no-outline size-14 font-semibold border-0 px-6 py-2"
+            ><span class="color-white color-4c4c4c">Explore</span></nuxt-link
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script>
-import Langchoice from '../lang/Langchoice.vue'
 export default {
-  components: { Langchoice },
-  data() {
-    return {}
+  props: {
+    scroll: {
+      type: Number,
+      default: 0,
+    },
+    width: {
+      type: Number,
+      default: 99999,
+    },
   },
-  methods: {},
+  data() {
+    return { opensearch: false }
+  },
+  computed: {
+    searching() {
+      return this.opensearch === true
+    },
+    scrolling() {
+      return this.scroll
+    },
+    lg() {
+      if (this.width < 810) return true
+      return false
+    },
+    sm640() {
+      if (this.width < 640) return true
+      return false
+    },
+    sm() {
+      if (this.width < 670) return true
+      return false
+    },
+    small() {
+      if (this.width < 548) return true
+      return false
+    },
+    smallx() {
+      if (this.width < 460) return true
+      return false
+    },
+    smallxx() {
+      if (this.width < 420) return true
+      return false
+    },
+  },
 }
 </script>
+<style scoped>
+#myVideo {
+  z-index: -5 !important;
+  object-position: top;
+  object-fit: scale-down;
+}
+.headtem:hover {
+  color: #00dce4 !important;
+  border-color: white !important;
+  animation: 0.2s appear;
+}
+.hoverlist {
+  background-clip: rgb(231, 230, 230) !important;
+}
+.headarticle,
+.bb00849 {
+  border-color: #008489 !important;
+}
+.headarticle:hover {
+  border-color: #00dce4 !important;
+  animation: 0.2s appear;
+}
+@media screen and (max-width: 640px) {
+  .htht {
+    padding: 0 !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0.8;
+  }
+}
+</style>

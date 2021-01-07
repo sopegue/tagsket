@@ -13,14 +13,9 @@
         >
           <a href="/" class="h-8">
             <div class="h-8 relative flex align-center space-x-2">
-              <Logowhite v-if="scrolling <= 479" />
-              <Logo v-else />
+              <Logowhite />
               <h4
-                class="color-white select-none size-19 font-semibold border-008489"
-                :class="{
-                  'border-b-8': scrolling <= 479,
-                  'color-4c4c4c bb00849 border-b-4': scrolling > 479,
-                }"
+                class="color-white border-b-8 select-none size-19 font-semibold border-008489"
               >
                 Tagsket
               </h4>
@@ -28,31 +23,49 @@
           </a>
         </div>
         <div
-          v-if="scrolling > 262 && searching"
+          v-if="tag && searching"
           class="w-1/2 flex align-center space-x-3"
           :class="{ 'w-full': searching && sm640 }"
         >
           <client-only>
             <button
-              class="hover-008489 no-outline btn-search p-2"
+              class="hover-008489 hover-bg00dce4ee no-outline btn-search p-2"
               @click="
                 {
                   opensearch = false
                 }
               "
             >
-              <span
-                class="color-363636"
-                :class="{ 'col-ws': scrolling > 262 && scrolling < 484 }"
-              >
-                <i class="fas fa-arrow-left"></i
+              <span class="col-ws">
+                <i class="fas fa-arrow-left makeme-00dce4"></i
               ></span>
             </button>
           </client-only>
           <Searchbarwhite :scroll="scroll" class="w-full" />
         </div>
         <div
-          v-if="(scrolling <= 262 && searching) || !searching"
+          v-else-if="scrolling > 330 && searching"
+          class="w-1/2 flex align-center space-x-3"
+          :class="{ 'w-full': searching && sm640 }"
+        >
+          <client-only>
+            <button
+              class="hover-008489 hover-bg00dce4ee no-outline btn-search p-2"
+              @click="
+                {
+                  opensearch = false
+                }
+              "
+            >
+              <span class="col-ws">
+                <i class="fas fa-arrow-left makeme-00dce4"></i
+              ></span>
+            </button>
+          </client-only>
+          <Searchbarwhite :scroll="scroll" class="w-full" />
+        </div>
+        <div
+          v-if="!searching"
           class="flex align-center space-x-6 cc-header"
           :class="{
             hidden: smallxx,
@@ -60,101 +73,102 @@
         >
           <nuxt-link
             to="#"
-            class="color-white select-none size-14 font-semibold border-008489"
-            :class="{
-              'color-4c4c4c headarticle border-b-2': scrolling > 479,
-              'headtem border-b-4': scrolling <= 479,
-            }"
+            class="color-white headtem border-b-4 select-none size-14 font-semibold border-008489"
             >Tik Tok</nuxt-link
           >
           <nuxt-link
             to="#"
-            class="color-white select-none size-14 font-semibold border-008489"
+            class="color-white headtem border-b-4 select-none size-14 font-semibold border-008489"
             :class="{
-              'color-4c4c4c headarticle border-b-2': scrolling > 479,
-              'headtem border-b-4': scrolling <= 479,
               hidden: smallx,
             }"
             >Facebook</nuxt-link
           >
           <nuxt-link
             to="#"
-            class="color-white select-none size-14 font-semibold border-008489"
+            class="color-white headtem border-b-4 select-none size-14 font-semibold border-008489"
             :class="{
-              'color-4c4c4c headarticle border-b-2': scrolling > 479,
-              'headtem border-b-4': scrolling <= 479,
               hidden: small,
             }"
             >Instagram</nuxt-link
           >
           <nuxt-link
             to="#"
-            class="color-white select-none size-14 font-semibold border-008489"
+            class="color-white headtem border-b-4 select-none size-14 font-semibold border-008489"
             :class="{
-              'color-4c4c4c headarticle border-b-2': scrolling > 479,
-              'headtem border-b-4': scrolling <= 479,
               hidden: sm,
             }"
             >Youtube</nuxt-link
           >
           <nuxt-link
             to="#"
-            class="color-white select-none size-14 font-semibold border-008489"
+            class="color-white headtem border-b-4 select-none size-14 font-semibold border-008489"
             :class="{
-              'color-4c4c4c headarticle border-b-2': scrolling > 479,
-              'headtem border-b-4': scrolling <= 479,
               hidden: lg,
             }"
             >Twitter</nuxt-link
           >
           <nuxt-link
             to="#"
-            class="color-white select-none size-14 font-semibold border-008489"
+            class="color-white headtem border-b-4 select-none size-14 font-semibold border-008489"
             :class="{
-              'color-4c4c4c headarticle border-b-2': scrolling > 479,
-              'headtem border-b-4': scrolling <= 479,
               hidden: lg,
             }"
             >Snapchat</nuxt-link
           >
         </div>
         <div
+          v-if="tag"
           class="flex align-center space-x-5"
-          :class="{ hidden: searching && sm640 && scroll > 262 }"
+          :class="{ hidden: searching && sm640 }"
         >
-          <div v-show="scrolling > 262 && !searching">
+          <div v-show="!searching">
             <client-only>
               <button
-                class="no-outline p-2"
+                class="no-outline p-2 hover-bg00dce4ee"
                 @click="
                   {
                     opensearch = true
                   }
                 "
               >
-                <span
-                  class="color-363636"
-                  :class="{ 'col-ws': scrolling > 262 && scrolling < 484 }"
-                >
-                  <i class="fas fa-search size-18"></i
+                <span class="col-ws">
+                  <i class="fas fa-search size-18 makeme-00dce4"></i
                 ></span>
               </button>
             </client-only>
           </div>
           <nuxt-link
             to="#"
-            class="button rounded-full no-outline size-14 font-semibold border-0 px-6 py-2"
-            :class="{
-              'is-lightees': scrolling > 479,
-              'is-lightes': scrolling <= 479,
-            }"
-            ><span
-              class="color-white"
-              :class="{
-                'color-4c4c4c': scrolling > 479,
-              }"
-              >The list</span
-            ></nuxt-link
+            class="button rounded-full is-lightees no-outline size-14 font-semibold border-0 px-6 py-2"
+            ><span class="color-white">Explore</span></nuxt-link
+          >
+        </div>
+        <div
+          v-else
+          class="flex align-center space-x-5"
+          :class="{ hidden: searching && sm640 && scroll > 262 }"
+        >
+          <div v-show="scrolling > 330 && !searching">
+            <client-only>
+              <button
+                class="no-outline p-2 hover-bg00dce4ee"
+                @click="
+                  {
+                    opensearch = true
+                  }
+                "
+              >
+                <span class="col-ws">
+                  <i class="fas fa-search size-18 makeme-00dce4"></i
+                ></span>
+              </button>
+            </client-only>
+          </div>
+          <nuxt-link
+            to="#"
+            class="button rounded-full is-lightees no-outline size-14 font-semibold border-0 px-6 py-2"
+            ><span class="color-white">Explore</span></nuxt-link
           >
         </div>
       </div>
@@ -177,6 +191,9 @@ export default {
     return { opensearch: false }
   },
   computed: {
+    tag() {
+      return this.$route.path.includes('/tag')
+    },
     searching() {
       return this.opensearch === true
     },

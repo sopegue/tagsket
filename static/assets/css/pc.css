@@ -5,7 +5,11 @@ body {
   height: 100%;
 }
 html{
-  background-color: rgba(189, 189, 189, 0.027);
+  background-color: rgba(233, 233, 233, 0.027);
+}
+.bg-ww{
+  animation: 0s appear;
+  background-color: rgb(59, 59, 59) !important;
 }
 .border-008489 {
   border-color: #00dce4 !important;
@@ -238,7 +242,7 @@ input[type='search']::-webkit-search-cancel-button {
   width: 36px !important;
   height: 36px !important;
 }
-.hover-bg00dce4:hover .makeme-00dce4 {
+.hover-bg00dce4ee:hover .makeme-00dce4 {
   color: #00dce4 !important;
 }
 .col-00dce4 {
@@ -457,5 +461,10 @@ input[type='search']::-webkit-search-cancel-button {
     .llchoice {
       display: none !important;
     }
+  }
+}
+@keyframes appear {
+  0% {
+    transform: translateZ(80px);
   }
 }

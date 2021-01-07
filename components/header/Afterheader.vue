@@ -6,7 +6,7 @@
     </video>
     <div style="height: 80px"></div>
     <div class="absolute w-full mt-10">
-      <div class="w-full px-6 mb-10">
+      <div class="w-full px-8 mb-20">
         <h3 class="w-full size-28 message color-white">
           Need to know what people are
           <span class="font-semibold col-00dce4">tagging</span> about ? <br />
@@ -18,6 +18,14 @@
       </div>
 
       <div class="search m-0-auto"><Searchbar /></div>
+    </div>
+    <div class="absolute bottom-0 right-0 mb-4 mr-4">
+      <a
+        class="credit color-6d6d6d"
+        href="https://omycotton.com/"
+        target="_blank"
+        ><span class="size-12 font-light">Video by cottonbro</span></a
+      >
     </div>
   </div>
 </template>
@@ -61,6 +69,9 @@ export default {
 }
 </script>
 <style scoped>
+.credit:hover {
+  color: rgb(231, 231, 231) !important;
+}
 .search {
   width: 50%;
 }
@@ -71,7 +82,7 @@ export default {
 
 .aft-head {
   z-index: 0 !important;
-  height: 512px !important;
+  height: 600px !important;
 }
 @media screen and (max-width: 800px) {
   .search {

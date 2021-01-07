@@ -10,21 +10,17 @@
     @mouseleave="manageleave"
   >
     <input
-      class="w-full py-2 pr-8 size-16 bghover-transparent no-outline outline-none pl-3 size-14 font font-semibold color-363636"
-      :class="{ 'col-ws': scrolling > 290 && scrolling < 484 }"
+      class="w-full col-ws py-2 pr-8 size-16 bghover-transparent no-outline outline-none pl-3 size-14 font font-semibold color-363636"
       type="search"
       placeholder="#foryoupage, #reels, #billionaire"
       @focus="managefocus"
       @blur="manageblur"
     />
     <client-only>
-      <button class="hover-008489 no-outline p-2 absolute right-0">
-        <span
-          class="color-363636"
-          :class="{ 'col-ws': scrolling > 290 && scrolling < 484 }"
-        >
-          <i class="fas fa-search makeme-008489"></i
-        ></span>
+      <button
+        class="hover-008489 hover-bg00dce4ee no-outline p-2 absolute right-0"
+      >
+        <span class="col-ws"> <i class="fas fa-search makeme-00dce4"></i></span>
       </button>
     </client-only>
   </div>
