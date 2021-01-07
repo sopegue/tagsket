@@ -15,7 +15,7 @@
             <div class="h-8 relative flex align-center space-x-2">
               <Logowhite />
               <h4
-                class="color-white border-b-8 select-none size-19 font-semibold border-008489"
+                class="color-white border-b-4 select-none size-19 font-semibold border-008489"
               >
                 Tagsket
               </h4>
@@ -73,12 +73,12 @@
         >
           <nuxt-link
             to="#"
-            class="color-white headtem border-b-4 select-none size-14 font-semibold border-008489"
+            class="color-white headtem border-b-2 select-none size-14 font-semibold border-008489"
             >Tik Tok</nuxt-link
           >
           <nuxt-link
             to="#"
-            class="color-white headtem border-b-4 select-none size-14 font-semibold border-008489"
+            class="color-white headtem border-b-2 select-none size-14 font-semibold border-008489"
             :class="{
               hidden: smallx,
             }"
@@ -86,7 +86,7 @@
           >
           <nuxt-link
             to="#"
-            class="color-white headtem border-b-4 select-none size-14 font-semibold border-008489"
+            class="color-white headtem border-b-2 select-none size-14 font-semibold border-008489"
             :class="{
               hidden: small,
             }"
@@ -94,7 +94,7 @@
           >
           <nuxt-link
             to="#"
-            class="color-white headtem border-b-4 select-none size-14 font-semibold border-008489"
+            class="color-white headtem border-b-2 select-none size-14 font-semibold border-008489"
             :class="{
               hidden: sm,
             }"
@@ -102,7 +102,7 @@
           >
           <nuxt-link
             to="#"
-            class="color-white headtem border-b-4 select-none size-14 font-semibold border-008489"
+            class="color-white headtem border-b-2 select-none size-14 font-semibold border-008489"
             :class="{
               hidden: lg,
             }"
@@ -110,7 +110,7 @@
           >
           <nuxt-link
             to="#"
-            class="color-white headtem border-b-4 select-none size-14 font-semibold border-008489"
+            class="color-white headtem border-b-2 select-none size-14 font-semibold border-008489"
             :class="{
               hidden: lg,
             }"

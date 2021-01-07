@@ -8,7 +8,29 @@
         shadown: scrolling > 3,
       }"
     />
-    <div class="pt-16">fezfzefezf</div>
+    <div class="pt-16">
+      <div class="w-full shadown border-b pt-2 overflow-x-auto">
+        <ul
+          class="nav-desc w-fit font-semibold m-0-auto flex align-center size-17 overflow-x-auto"
+        >
+          <li>
+            <nuxt-link to="#" class="text-center current-desc">Home</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="#" class="text-center">Trending</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="#" class="text-center">Explore</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="#" class="text-center">Best of</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="#" class="text-center">Category</nuxt-link>
+          </li>
+        </ul>
+      </div>
+    </div>
     <Footer />
   </div>
 </template>
@@ -53,7 +75,6 @@ export default {
     },
     handleScroll() {
       this.scroll = window.scrollY
-      console.log(this.scroll)
     },
     showMenu() {
       this.$emit('showMenu', true)
