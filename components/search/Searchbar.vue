@@ -1,7 +1,7 @@
 <template>
-  <div class="border relative flex align-center rounded-full">
+  <div class="border hear-search relative flex align-center rounded-full">
     <input
-      class="w-full pr-12 bghover-transparent rounded-full outline-none py-2 pl-3 size-18 font font-semibold col-ws"
+      class="w-full putput pr-12 bghover-transparent rounded-full outline-none py-2 pl-3 size-16 font font-semibold col-ws"
       type="search"
       placeholder="#foryoupage, #reels, #billionaire"
     />

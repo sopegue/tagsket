@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border relative flex align-center rounded"
+    class="border hear-search relative flex align-center rounded"
     :class="{ 'my-shadow': focused }"
     @mouseover="
       {
@@ -10,7 +10,7 @@
     @mouseleave="manageleave"
   >
     <input
-      class="w-full col-ws py-2 pr-8 size-16 bghover-transparent no-outline outline-none pl-3 size-14 font font-semibold color-363636"
+      class="w-full putput col-ws py-2 pr-8 size-16 bghover-transparent no-outline outline-none pl-3 size-14 font font-semibold color-363636"
       type="search"
       placeholder="#foryoupage, #reels, #billionaire"
       @focus="managefocus"
@@ -18,7 +18,7 @@
     />
     <client-only>
       <button
-        class="hover-008489 hover-bg00dce4ee no-outline p-2 absolute right-0"
+        class="hover-008489 hover-bg00dce4ee btn-cere no-outline p-2 absolute right-0"
       >
         <span class="col-ws"> <i class="fas fa-search makeme-00dce4"></i></span>
       </button>

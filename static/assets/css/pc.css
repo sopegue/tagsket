@@ -4,10 +4,25 @@
 body {
   height: 100%;
 }
-html{
+html {
   background-color: rgba(233, 233, 233, 0.027);
 }
-.bg-ww{
+.hear-search:focus-within {
+  background-color: rgb(253, 253, 253) !important;
+}
+.hear-search:focus-within .putput {
+  color: rgb(59, 59, 59) !important;
+}
+.hear-search:focus-within .putput::placeholder {
+  color: rgb(121, 121, 121) !important;
+}
+.hear-search:focus-within .btn-cer {
+  background-color: #008489 !important;
+}
+.hear-search:focus-within .btn-cere .makeme-00dce4 {
+  color: #008489 !important;
+}
+.bg-ww {
   animation: 0s appear;
   background-color: rgb(59, 59, 59) !important;
 }
