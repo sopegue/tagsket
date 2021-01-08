@@ -31,6 +31,28 @@
         </li>
       </ul>
     </div>
+    <div class="px-2 sm:px-8 mt-5">
+      <h3 class="font-semibold size-19 color-gray">Social networks #tags</h3>
+      <h5>Discover the #tags that are been used on social networks.</h5>
+      <h3 class="font-semibold size-18 color-gray mt-5">Suggestions</h3>
+    </div>
+    <div
+      class="flex tagsug align-center space-x-3 pt-5 pb-5 overflow-x-scroll overflow-y-hidden"
+    >
+      <Suggest v-for="i in 20" :key="i + 200" tag="#gegregerfyp" />
+    </div>
+    <div>
+      <div class="px-2 sm:px-8 flex align-center space-x-3 flex-wrap">
+        <Suggest v-for="i in 10" :key="i" tag="#foryou" class="pb-5" />
+        <Suggest
+          v-for="i in 20"
+          :key="i + 20"
+          tag="#foryoupagetiktok"
+          class="pb-5"
+        />
+        <Suggest v-for="i in 30" :key="i + 50" tag="#reels" class="pb-5" />
+      </div>
+    </div>
     <Footer />
   </div>
 </template>
@@ -89,9 +111,7 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.welcome {
-  height: 1366px;
-}
+
 .container {
   margin: 0 auto;
   min-height: 100vh;

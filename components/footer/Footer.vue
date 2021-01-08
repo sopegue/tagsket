@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-ww myfoot absolute bottom-0 w-full">
+  <div class="bg-ww myfoot relative bottom-0 w-full mt-10">
     <div class="w-full px-8 foot flex align-center justify-between">
       <a href="/" class="h-8">
         <div class="h-8 relative flex align-center space-x-1">

@@ -31,6 +31,7 @@
         </ul>
       </div>
     </div>
+    <div><nuxt-child /></div>
     <Footer />
   </div>
 </template>
@@ -89,9 +90,7 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.welcome {
-  height: 1366px;
-}
+
 .container {
   margin: 0 auto;
   min-height: 100vh;

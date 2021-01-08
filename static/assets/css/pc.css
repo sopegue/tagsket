@@ -11,6 +11,16 @@
   padding: 10px 25px;
   border-bottom: 2px solid transparent;
 }
+.color-gray {
+  color: #3a3a3a !important;
+}
+.flex.is-centered {
+  justify-content: center !important;
+}
+.tagsug::-webkit-scrollbar {
+  width: 0 !important;
+  background: transparent !important; /* make scrollbar transparent */
+}
 .nav-desc a:hover {
   color: #008489 !important;
   border-color: #008489;
@@ -24,7 +34,7 @@
 .current-desc {
   font-weight: bold;
   color: #008489 !important;
-  border-color:#008489 !important;
+  border-color: #008489 !important;
 }
 body {
   height: 100%;
@@ -432,6 +442,7 @@ input[type='search']::-webkit-search-cancel-button {
 .aside:hover::-webkit-scrollbar-thumb {
   background: #dddddd;
 }
+
 @media screen and (max-width: 450px) {
   .nexttag {
     display: none !important;

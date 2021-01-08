@@ -9,7 +9,7 @@
       <div class="w-full px-8 mb-20">
         <h3 class="w-full size-28 message color-white">
           Need to know what people are
-          <span class="font-semibold col-00dce4">tagging</span> about ? <br />
+          <span class="font-semibold col-00dce4">#tagging</span> about ? <br />
           <span
             >Search your <span class="font-semibold col-00dce4">#tag</span> to
             find out.</span
