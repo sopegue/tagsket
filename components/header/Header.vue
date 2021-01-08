@@ -9,7 +9,7 @@
       <div class="w-full relative flex align-center justify-between">
         <div
           class="flex align-center relative"
-          :class="{ hidden: searching && sm640 }"
+          :class="{ hidden: searching && sm640 && scroll > 262 }"
         >
           <a href="/" class="h-8">
             <div class="h-8 relative flex align-center space-x-2">
