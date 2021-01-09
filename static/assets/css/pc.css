@@ -8,7 +8,7 @@
 .nav-desc a {
   display: block;
   color: #5a5a5a;
-  padding: 10px 25px;
+  padding: 9px 25px;
   border-bottom: 2px solid transparent;
 }
 .color-gray {
@@ -185,6 +185,12 @@ input[type='search']::-webkit-search-cancel-button {
   background-color: #008489;
   border-color: transparent;
 }
+
+.is-lighteees {
+  background-color: transparent !important;
+  border: 1px solid #ffffff !important;
+}
+
 .button.is-lights.is-hovered,
 .button.is-lights:hover {
   background-color: rgba(0, 132, 137, 0.11);
@@ -312,6 +318,16 @@ input[type='search']::-webkit-search-cancel-button {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+.vertical-center-horizontal {
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 .pos-right {
   float: right !important;
@@ -517,8 +533,28 @@ input[type='search']::-webkit-search-cancel-button {
     }
   }
 }
-@keyframes appear {
+@keyframes appearz {
   0% {
     transform: translateZ(80px);
+  }
+}
+@keyframes appearxl {
+  0% {
+    transform: translateZ(80px);
+  }
+}
+@keyframes appearxr {
+  0% {
+    transform: translateZ(80px);
+  }
+}
+@keyframes appearyh {
+  0% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes appearyb {
+  0% {
+    transform: translateY(10px);
   }
 }

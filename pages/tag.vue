@@ -9,7 +9,7 @@
       }"
     />
     <div class="pt-16">
-      <div class="w-full shadown border-b pt-2 overflow-x-auto">
+      <div class="sticky top-0 w-full shadown border-b pt-2 overflow-x-auto">
         <ul
           class="nav-desc w-fit font-semibold m-0-auto flex align-center size-17 overflow-x-auto"
         >
@@ -26,7 +26,7 @@
             <nuxt-link to="#" class="text-center">Best of</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="#" class="text-center">Category</nuxt-link>
+            <nuxt-link to="#" class="text-center">Social networks</nuxt-link>
           </li>
         </ul>
       </div>

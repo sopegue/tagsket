@@ -10,7 +10,10 @@
       }"
     />
     <Afterheader />
-    <div class="w-full shadown border-b pt-2 overflow-x-auto">
+    <div
+      class="sticky top-0 w-full shadown border-b pt-2 overflow-x-auto"
+      :class="{ 'h64 bg-white z-50': scrolling > 601 }"
+    >
       <ul
         class="nav-desc w-fit font-semibold m-0-auto flex align-center size-17 overflow-x-auto"
       >
@@ -27,7 +30,7 @@
           <nuxt-link to="#" class="text-center">Best of</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="#" class="text-center">Category</nuxt-link>
+          <nuxt-link to="#" class="text-center">Social networks</nuxt-link>
         </li>
       </ul>
     </div>
@@ -37,20 +40,15 @@
       <h3 class="font-semibold size-18 color-gray mt-5">Suggestions</h3>
     </div>
     <div
-      class="flex tagsug align-center space-x-3 pt-5 pb-5 overflow-x-scroll overflow-y-hidden"
+      class="flex tagsug align-center space-x-3 pt-5 pb-3 overflow-x-scroll overflow-y-hidden"
     >
       <Suggest v-for="i in 20" :key="i + 200" tag="#gegregerfyp" />
     </div>
     <div>
-      <div class="px-2 sm:px-8 flex align-center space-x-3 flex-wrap">
-        <Suggest v-for="i in 10" :key="i" tag="#foryou" class="pb-5" />
-        <Suggest
-          v-for="i in 20"
-          :key="i + 20"
-          tag="#foryoupagetiktok"
-          class="pb-5"
-        />
-        <Suggest v-for="i in 30" :key="i + 50" tag="#reels" class="pb-5" />
+      <div class="px-2 sm:px-8 flex align-center flex-col">
+        <Tag v-for="i in 10" :key="i" tag="#foryou" />
+        <Tag v-for="i in 20" :key="i + 20" tag="#foryoupagetiktok" />
+        <Tag v-for="i in 30" :key="i + 50" tag="#reels" />
       </div>
     </div>
     <Footer />
@@ -97,6 +95,7 @@ export default {
     },
     handleScroll() {
       this.scroll = window.scrollY
+      console.log(window.scrollY)
     },
     showMenu() {
       this.$emit('showMenu', true)
@@ -130,7 +129,10 @@ export default {
   color: #35495e;
   letter-spacing: 1px;
 }
-
+.h64 {
+  top: 60px !important;
+  animation: 0.1s appearyh;
+}
 .subtitle {
   font-weight: 300;
   font-size: 42px;
