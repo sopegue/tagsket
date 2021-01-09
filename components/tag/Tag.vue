@@ -7,25 +7,29 @@
         <span class="color-white size-16">#foryoupage</span></a
       >
       <div class="absolute bag w-full h-full"></div>
-      <img class="rounded-md tag-mg" src="/tag/fb.jpg" alt="" />
+      <img class="rounded-md tag-mg" src="/tag/tiktok.jpg" alt="" />
     </div>
-    <div class="mt-4 px-5">
+    <div class="aa mt-4 px-5">
       <client-only>
         <div
           class="color-4c4c4c dd-sum flex align-center justify-between size-16 font-semibold border-b-2 mb-5 pb-3"
         >
-          <p class="flex align-center space-x-6">
+          <p class="flex align-center space-x-4 sm:space-x-6">
             <span class="flex align-center color-008489 font-semibold space-x-2"
-              ><i class="far fa-heart size-18"></i>
-              <span class="size-15">23 M</span></span
+              ><i class="far fa-eye ft size-18"></i>
+              <span class="size-14">700 B</span></span
             >
             <span class="flex align-center color-008489 font-semibold space-x-2"
-              ><i class="far fa-eye size-18"></i>
-              <span class="size-15">400 M</span></span
+              ><i class="far fa-comment ft size-18"></i>
+              <span class="size-14">1.900 B</span></span
             >
             <span class="flex align-center color-008489 font-semibold space-x-2"
-              ><i class="fas fa-share size-18"></i>
-              <span class="size-15">2 M</span></span
+              ><i class="far fa-heart ft size-18"></i>
+              <span class="size-14">3 B</span></span
+            >
+            <span class="flex align-center color-008489 font-semibold space-x-2"
+              ><i class="fas fa-share ft size-18"></i>
+              <span class="size-14">900 M</span></span
             >
           </p>
           <div class="flex align-center space-x-4">
@@ -88,13 +92,15 @@ img {
   .p-img {
     height: 60px;
   }
-  .a-tag {
-    margin-top: -0.5rem !important;
+  .aa {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
   }
-}
-@media screen and (max-width: 560px) {
   .dd-sum {
     flex-direction: column !important;
+  }
+  .a-tag {
+    margin-top: -0.5rem !important;
   }
   .dd-sum > p {
     margin-bottom: 1rem !important;
@@ -102,6 +108,20 @@ img {
   .dd-sum > p span,
   .used-on {
     font-size: 14px !important;
+  }
+}
+@media screen and (max-width: 345px) {
+  .dd-sum > p span,
+  .ft,
+  .used-on {
+    font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 300px) {
+  .dd-sum > p span,
+  .ft,
+  .used-on {
+    font-size: 10px !important;
   }
 }
 </style>
