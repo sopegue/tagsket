@@ -1,5 +1,7 @@
 # tagsket
 
+tagsket = TAG + MARKET is an idea of popular tag with statistic data on all platforms where they are used (currently in development but slowly).
+
 ## Build Setup
 
 ```bash
