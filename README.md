@@ -2,6 +2,10 @@
 
 tagsket = TAG + MARKET is an idea of popular tag with statistic data on all platforms where they are used (currently in development but slowly).
 
+# demo site
+
+[Demo here](https://tagsket.netlify.app/).
+
 ## Build Setup
 
 ```bash
