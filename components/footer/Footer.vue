@@ -3,7 +3,7 @@
     <div class="w-full px-8 foot flex align-center justify-between">
       <div class="text-center w-fit m-0-auto">
         <span class="col-ws size-12"
-          >© {{ toyear }}, Xunita
+          >© {{ toyear }}
           <a href="/" class="inline-block">
             <div class="h-8 relative flex align-center space-x-1">
               <h4
@@ -13,7 +13,7 @@
               </h4>
             </div>
           </a>
-          • by Goyo</span
+          • by Xunita</span
         >
       </div>
     </div>
