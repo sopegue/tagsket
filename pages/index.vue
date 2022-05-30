@@ -46,9 +46,9 @@
     </div>
     <div>
       <div class="px-2 sm:px-8 flex align-center flex-col">
-        <Tag v-for="i in 10" :key="i" tag="#foryou" />
-        <Tag v-for="i in 20" :key="i + 20" tag="#foryoupagetiktok" />
-        <Tag v-for="i in 30" :key="i + 50" tag="#reels" />
+        <Tag v-for="i in 2" :key="i" tag="#foryou" />
+        <Tag v-for="i in 4" :key="i + 20" tag="#foryoupagetiktok" />
+        <Tag v-for="i in 3" :key="i + 50" tag="#reels" />
       </div>
     </div>
     <Footer />
